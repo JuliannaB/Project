@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Grater.Models.Therapist>
+@*
+
+*@
+
+@{
+    ViewBag.Title = "Therapist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Therapist</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+<table class="table-condensed">
+    <tr>
+        <th>Search by name:</th>
+        <th>Search by city:</th>
+        <th>Search by phone number:</th>
+    </tr>
+    <tr>
+        <td> @Html.TextBox("SearchString")</td>
+        <td> @Html.TextBox("SearchString")</td>
+        <td> @Html.TextBox("SearchString")</td>
+    </tr>
+    <tr>
+        <td> <input type="submit" value="Search" />   @*value - label*@</td>
+
+    </tr>
+</table>
+
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TherapistName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @*    @Html.DisplayNameFor(model => model.SkillName) *@
+        </th>
+        <th></th>
+
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.ActionLink(item.TherapistName, "Details", new { id = item.Id }, null)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skills)
+            </td>
+
+
+
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>

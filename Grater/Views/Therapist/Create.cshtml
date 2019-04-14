@@ -1,0 +1,37 @@
+﻿@model Grater.Models.Therapist
+@{
+
+    ViewBag.Title = "New";
+}
+
+<h2>New Therapist</h2>
+
+@using (Html.BeginForm("Create", "Therapists"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.TherapistName)
+        @Html.TextBoxFor(m => m.TherapistName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.TherapistName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.PhoneNumber)
+        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.City)
+        @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description)
+        @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.TherapistImage)
+        @Html.TextBoxFor(m => m.TherapistImage, new { @class = "form-control" })
+    </div>
+
+}

@@ -1,0 +1,28 @@
+﻿@model Grater.Models.Therapist
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container">
+    <table class="table-condensed">
+        <tr>
+            <th>@Model.TherapistName</th>
+        </tr>
+
+        <tr><td>@Model.TherapistImage</td></tr>
+
+        <tr><td>@Model.City</td></tr>
+
+        <tr><td>@Model.Email</td></tr>
+
+        <tr><td>@Model.Skills</td></tr>
+
+        <tr><td>@Model.Description</td></tr>
+        <tr>    <td></td></tr>
+    </table>
+
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
