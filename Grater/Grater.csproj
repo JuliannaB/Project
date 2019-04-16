@@ -287,6 +287,18 @@
     <Compile Include="Migrations\201904062003247_SeedUsers.Designer.cs">
       <DependentUpon>201904062003247_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904162002386_WhatIsGoingOn.cs" />
+    <Compile Include="Migrations\201904162002386_WhatIsGoingOn.Designer.cs">
+      <DependentUpon>201904162002386_WhatIsGoingOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904162049024_BootstrapTheme.cs" />
+    <Compile Include="Migrations\201904162049024_BootstrapTheme.Designer.cs">
+      <DependentUpon>201904162049024_BootstrapTheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904162158300_editTHerapView.cs" />
+    <Compile Include="Migrations\201904162158300_editTHerapView.Designer.cs">
+      <DependentUpon>201904162158300_editTHerapView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -306,6 +318,7 @@
     <Content Include="App_Data\Images\beauty.jpg" />
     <Content Include="App_Data\Images\beauty.png" />
     <Content Include="App_Data\Images\RATE.png" />
+    <Content Include="Content\bootstrap-cosmo.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -368,6 +381,7 @@
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\Therapist\Create.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Therapist\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Comment\" />
@@ -449,6 +463,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904062003247_SeedUsers.resx">
       <DependentUpon>201904062003247_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904162002386_WhatIsGoingOn.resx">
+      <DependentUpon>201904162002386_WhatIsGoingOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904162049024_BootstrapTheme.resx">
+      <DependentUpon>201904162049024_BootstrapTheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904162158300_editTHerapView.resx">
+      <DependentUpon>201904162158300_editTHerapView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

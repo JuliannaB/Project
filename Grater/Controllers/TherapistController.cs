@@ -68,7 +68,7 @@ namespace Grater.Controllers
             return View(therapist);
         }
 
-        // GET: Beer/Create
+        // GET: /Create
         public ActionResult Create()
         {
             return View();
@@ -98,7 +98,7 @@ namespace Grater.Controllers
             return View(therapist);
         }
 
-        // GET: Beer/Edit/5
+        // GET: Therapist/Edit/5
 
         public ActionResult Edit(int? id)
         {
@@ -114,12 +114,12 @@ namespace Grater.Controllers
             return View(therapist);
         }
 
-        // POST: Beer/Edit/5
+        // POST: Therapist/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BeerID,Name,Style,Brand,Brewery,Container,Volume,ABV")] Therapist therapist)
+        public ActionResult Edit([Bind(Include = "TherapistName, PhoneNumber, City, Email, Description, TherapistImage")] Therapist therapist)
         {
             if (ModelState.IsValid)
             {
@@ -130,7 +130,7 @@ namespace Grater.Controllers
             return View(therapist);
         }
 
-        // GET: Beer/Delete/5
+        // GET: Therapist/Delete/5
         public ActionResult Delete(int? id, bool? saveChangesError = false)
         {
             if (id == null)
@@ -149,7 +149,7 @@ namespace Grater.Controllers
             return View(therapist);
         }
 
-        // POST: Beer/Delete/5
+        // POST: Therapist/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
