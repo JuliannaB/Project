@@ -22,6 +22,7 @@ namespace Grater.Models
 
         public byte[] TherapistImage { get; set; }
 
+        public Skill skill;
         public int SkillId { get; set; }
         public virtual ICollection<Skill> Skills { get; set; }
     }

@@ -299,6 +299,22 @@
     <Compile Include="Migrations\201904162158300_editTHerapView.Designer.cs">
       <DependentUpon>201904162158300_editTHerapView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904171927437_SkillTry.cs" />
+    <Compile Include="Migrations\201904171927437_SkillTry.Designer.cs">
+      <DependentUpon>201904171927437_SkillTry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904171929039_skillstrynext.cs" />
+    <Compile Include="Migrations\201904171929039_skillstrynext.Designer.cs">
+      <DependentUpon>201904171929039_skillstrynext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904171936361_skillagain.cs" />
+    <Compile Include="Migrations\201904171936361_skillagain.Designer.cs">
+      <DependentUpon>201904171936361_skillagain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904171944145_skill.cs" />
+    <Compile Include="Migrations\201904171944145_skill.Designer.cs">
+      <DependentUpon>201904171944145_skill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -382,6 +398,7 @@
     <Content Include="Views\Therapist\Create.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Therapist\Edit.cshtml" />
+    <Content Include="Views\User\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Comment\" />
@@ -472,6 +489,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904162158300_editTHerapView.resx">
       <DependentUpon>201904162158300_editTHerapView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904171927437_SkillTry.resx">
+      <DependentUpon>201904171927437_SkillTry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904171929039_skillstrynext.resx">
+      <DependentUpon>201904171929039_skillstrynext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904171936361_skillagain.resx">
+      <DependentUpon>201904171936361_skillagain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904171944145_skill.resx">
+      <DependentUpon>201904171944145_skill.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
