@@ -1,0 +1,13 @@
+﻿@model Grater.ViewModel.SkillsTherapistViewModel
+@{
+    ViewBag.Title = "Radom";
+}
+
+<h2>@Model.Therapist.TherapistName</h2>
+<ul>
+
+    @foreach (var skills in Model.Skills)
+    {
+       <li>@skills.SkillName</li>
+    }
+</ul>

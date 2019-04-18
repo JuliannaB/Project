@@ -188,7 +188,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -197,6 +196,7 @@
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SkillsController.cs" />
     <Compile Include="Controllers\TherapistController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\UserSearchLogic.cs" />
@@ -315,6 +315,10 @@
     <Compile Include="Migrations\201904171944145_skill.Designer.cs">
       <DependentUpon>201904171944145_skill.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904182124425_tidyUpCode.cs" />
+    <Compile Include="Migrations\201904182124425_tidyUpCode.Designer.cs">
+      <DependentUpon>201904182124425_tidyUpCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -399,10 +403,13 @@
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Therapist\Edit.cshtml" />
     <Content Include="Views\User\View.cshtml" />
+    <Content Include="Views\Therapist\Delete.cshtml" />
+    <Content Include="Views\Therapist\Radom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Comment\" />
     <Folder Include="Views\Register\" />
+    <Folder Include="Views\Skills\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -501,6 +508,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904171944145_skill.resx">
       <DependentUpon>201904171944145_skill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904182124425_tidyUpCode.resx">
+      <DependentUpon>201904182124425_tidyUpCode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,26 +14,46 @@ namespace Grater.Controllers
 {
     public class UserController : Controller
     {
-        // GET: User
-       
-        public ActionResult Index(UserSearchModel searchModel)
+        private ApplicationDbContext _context = new ApplicationDbContext();
+        public UserController()
         {
-            var logic = new UserSearchLogic();
-            var model = logic.GetUsers(searchModel);
-            return View(model);
+            _context = new ApplicationDbContext();
         }
 
-       
+        public ActionResult Details(int id)  //wchodzimy w detale
+        {
+            var user = _context.Seekers.SingleOrDefault(c => c.Id == id);
 
-         private ApplicationDbContext _context = new ApplicationDbContext();
-        public UserController()
+            if (user == null)
+                return HttpNotFound();
+
+            return View(user);
+        }
+        
+        protected override void Dispose(bool disposing) //nie jestem pewna co to
+        {
+            _context.Dispose();
+        }
+
+        public ActionResult Create()  //wchodzimy do create ale to tyle
+        {
+            return View();
+        }
+
+
+
+
+        // GET: User                    Nie dziala to szukanie. To pewnie byla jakas proba z neta
+        /*   public ActionResult Index(UserSearchModel searchModel)
            {
-               _context = new ApplicationDbContext();
+               var logic = new UserSearchLogic();
+               var model = logic.GetUsers(searchModel);
+               return View(model);
            }
-           protected override void Dispose(bool disposing)
-           {
-               _context.Dispose();
-           }
+           */
+
+
+
         /*   public ViewResult Index()
            {
                var user = _context.Seekers.ToList();   //  var user = _context.Users.Include(c => c.Comment).ToList() doesnt work :/
@@ -41,20 +61,9 @@ namespace Grater.Controllers
                return View(user);
            }  */
 
-           public ActionResult Create()
-           {
-               return View();
-           }
 
-           public ActionResult Details(int id)
-           {
-               var user = _context.Seekers.SingleOrDefault(c => c.Id == id);
 
-               if (user == null)
-                   return HttpNotFound();
 
-               return View(user);
-           }
-          
+
     }
 }
