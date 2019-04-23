@@ -13,7 +13,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Grater.Controllers
 {
-    [Authorize]
+ //   [Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

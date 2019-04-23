@@ -27,7 +27,7 @@ namespace Grater.Models
         public DbSet <Salon> Salons { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("AzureContext", throwIfV1Schema: false)
         {
         }
 

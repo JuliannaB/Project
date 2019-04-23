@@ -11,7 +11,7 @@ using Grater.ViewModel;
 
 namespace Grater.Controllers
 {
-    [Authorize]
+   // [Authorize]
     public class TherapistController : Controller
     {
         private ApplicationDbContext _context = new ApplicationDbContext();
@@ -41,29 +41,38 @@ namespace Grater.Controllers
               }
               */
         //GET: Therapist/Index    Jest ok, przywrocic po usunieciu Radom
-        public ViewResult Index(string sortOrder, string searchString)  // wylistowuje terapeutki, dodaje mozliwosc szukania
-              {
-                  ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+        /*     public ViewResult Index(string sortOrder, string searchString)  // wylistowuje terapeutki, dodaje mozliwosc szukania
+                   {
+                       ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
 
-                  var therapists = from b in _context.Therapists
-                                   select b;
+                       var therapists = from b in _context.Therapists
+                                        select b;
 
-                  switch (sortOrder)
-                  {
-                      default:
-                          therapists = therapists.OrderBy(s => s.TherapistName);
-                          break;
-                  }
+                       switch (sortOrder)
+                       {
+                           default:
+                               therapists = therapists.OrderBy(s => s.TherapistName);
+                               break;
+                       }
 
-                  if (!String.IsNullOrEmpty(searchString))
-                  {
-                      therapists = therapists.Where(b => b.TherapistName.Contains(searchString) || b.City.Contains(searchString) || b.PhoneNumber.Contains(searchString));
-                  }
+                       if (!String.IsNullOrEmpty(searchString))
+                       {
+                           therapists = therapists.Where(b => b.TherapistName.Contains(searchString) || b.City.Contains(searchString) || b.PhoneNumber.Contains(searchString));
+                       }
 
-                  return View(therapists.ToList());
-              }
-              
+                       return View(therapists.ToList());
+                   }
+                   */
+        public ViewResult Index()
+        {
 
+            var therapists = _context.Therapists.Include(s => s.Skills ).ToList();
+                            
+
+        
+
+            return View(therapists);
+        }
 
         //GET: Therapist/Details
 

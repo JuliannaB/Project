@@ -16,8 +16,8 @@ namespace Grater
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);    //added because of creating API
 
-            AreaRegistration.RegisterAllAreas();
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+          AreaRegistration.RegisterAllAreas();
+           FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
