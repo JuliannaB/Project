@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201903041529345_AddFKeys.Designer.cs">
       <DependentUpon>201903041529345_AddFKeys.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903050854402_joinTable.cs" />
+    <Compile Include="Migrations\201903050854402_joinTable.Designer.cs">
+      <DependentUpon>201903050854402_joinTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201903051039138_RemovedFields.cs" />
     <Compile Include="Migrations\201903051039138_RemovedFields.Designer.cs">
       <DependentUpon>201903051039138_RemovedFields.cs</DependentUpon>
@@ -345,7 +349,6 @@
     <Compile Include="Models\UserSearchModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModel\SkillsTherapistViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-Grater-20190304024829.mdf" />
@@ -419,17 +422,18 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\User\Create.cshtml" />
-    <Content Include="Views\Therapist\Create.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Therapist\Edit.cshtml" />
     <Content Include="Views\User\View.cshtml" />
     <Content Include="Views\Therapist\Delete.cshtml" />
     <Content Include="Views\Therapist\Radom.cshtml" />
+    <Content Include="Views\Therapist\Create.cshtml" />
+    <Content Include="Views\Skills\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ViewModel\" />
     <Folder Include="Views\Comment\" />
     <Folder Include="Views\Register\" />
-    <Folder Include="Views\Skills\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -450,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903041529345_AddFKeys.resx">
       <DependentUpon>201903041529345_AddFKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903050854402_joinTable.resx">
+      <DependentUpon>201903050854402_joinTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903051039138_RemovedFields.resx">
       <DependentUpon>201903051039138_RemovedFields.cs</DependentUpon>

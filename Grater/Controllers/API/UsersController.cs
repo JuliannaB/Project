@@ -11,7 +11,7 @@ namespace Grater.Controllers.API
 {
     public class UsersController : ApiController
     {
-        private GraterContext _context = new GraterContext();
+        private ApplicationDbContext _context = new ApplicationDbContext();
 
     /*    public UsersController()
         {

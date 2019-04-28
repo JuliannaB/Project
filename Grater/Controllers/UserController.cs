@@ -14,7 +14,7 @@ namespace Grater.Controllers
 {
     public class UserController : Controller
     {
-        private GraterContext _context = new GraterContext();
+        private ApplicationDbContext _context = new ApplicationDbContext();
    /*     public UserController()
         {
             _context = new ApplicationDbContext();

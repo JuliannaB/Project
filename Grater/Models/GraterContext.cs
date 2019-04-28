@@ -6,9 +6,9 @@ using System.Web;
 
 namespace Grater.Models
 {
-    public class GraterContext: DbContext
+    public class GraterContext
     {
-        public GraterContext() : base("AzureContext")
+     /*    public GraterContext() : base("AzureContext")
         {
 
         }
@@ -18,6 +18,6 @@ namespace Grater.Models
         public DbSet<Skill> Skills { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Salon> Salons { get; set; }
-
+        */
     }
 }

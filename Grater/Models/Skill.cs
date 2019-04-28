@@ -8,9 +8,13 @@ namespace Grater.Models
 {
     public class Skill
     {
-        public int Id { get; set; }
-        public string SkillName { get; set; }
-        public string Skillcha { get; set; }
+        public int SkillId { get; set; }
+        public bool SkillNails { get; set; }
+        public bool SkillFace { get; set; }
+        public bool SkillMassage { get; set; }
+        public bool SkillBody { get; set; }
+        public bool SkillWax { get; set; }
+        public bool SkillEyes { get; set; }
 
         [Required]
         public Therapist Therapist { get; set; }

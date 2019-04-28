@@ -7,14 +7,14 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Grater.ViewModel;
+
 
 namespace Grater.Controllers
 {
    // [Authorize]
     public class TherapistController : Controller
     {
-        private GraterContext _context = new GraterContext();
+        private ApplicationDbContext _context = new ApplicationDbContext();
 
      /*   public TherapistController()
         {
