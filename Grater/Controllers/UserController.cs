@@ -14,12 +14,12 @@ namespace Grater.Controllers
 {
     public class UserController : Controller
     {
-        private ApplicationDbContext _context = new ApplicationDbContext();
-        public UserController()
+        private GraterContext _context = new GraterContext();
+   /*     public UserController()
         {
             _context = new ApplicationDbContext();
         }
-
+        */
         public ActionResult Details(int id)  //wchodzimy w detale
         {
             var user = _context.Seekers.SingleOrDefault(c => c.Id == id);

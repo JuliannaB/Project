@@ -11,12 +11,12 @@ namespace Grater.Controllers.API
 {
     public class UsersController : ApiController
     {
-        private ApplicationDbContext _context;
+        private GraterContext _context = new GraterContext();
 
-        public UsersController()
+    /*    public UsersController()
         {
             _context = new ApplicationDbContext();
-        }
+        }   */
         
         //Get / api/users
         public IEnumerable<User> GetUsers()

@@ -13,16 +13,16 @@ namespace Grater.Controllers
 {
     public class UserSearchLogic
     {
-        private ApplicationDbContext Context;
+        private GraterContext _context = new GraterContext();
 
-        public UserSearchLogic()
+       /* public UserSearchLogic()
         {
             Context = new ApplicationDbContext();
         }
-
+          */
         public IQueryable<User> GetUsers(UserSearchModel searchModel)
         {
-            var result = Context.Seekers.AsQueryable();
+            var result = _context.Seekers.AsQueryable();
             if (searchModel != null)
             {
                 if (searchModel.Id.HasValue)

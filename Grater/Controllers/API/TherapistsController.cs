@@ -10,12 +10,12 @@ namespace Grater.Controllers.API
 {
     public class TherapistsController : ApiController
     {
-        private ApplicationDbContext _context;
+        private GraterContext _context = new GraterContext();
 
-        public TherapistsController()
+     /*   public TherapistsController()
         {
             _context = new ApplicationDbContext();
-        }
+        }   */
 
         //Get / api/therapist
         public IEnumerable<Therapist> GetTherapists()

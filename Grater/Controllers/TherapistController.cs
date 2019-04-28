@@ -14,9 +14,9 @@ namespace Grater.Controllers
    // [Authorize]
     public class TherapistController : Controller
     {
-        private ApplicationDbContext _context = new ApplicationDbContext();
+        private GraterContext _context = new GraterContext();
 
-        public TherapistController()
+     /*   public TherapistController()
         {
             _context = new ApplicationDbContext();
         }
@@ -66,10 +66,7 @@ namespace Grater.Controllers
         public ViewResult Index()
         {
 
-            var therapists = _context.Therapists.Include(s => s.Skills ).ToList();
-                            
-
-        
+            var therapists = _context.Therapists.ToList();                            
 
             return View(therapists);
         }

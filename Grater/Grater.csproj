@@ -319,10 +319,23 @@
     <Compile Include="Migrations\201904182124425_tidyUpCode.Designer.cs">
       <DependentUpon>201904182124425_tidyUpCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904271654443_changeCotext.cs" />
+    <Compile Include="Migrations\201904271654443_changeCotext.Designer.cs">
+      <DependentUpon>201904271654443_changeCotext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904271722429_newBeg.cs" />
+    <Compile Include="Migrations\201904271722429_newBeg.Designer.cs">
+      <DependentUpon>201904271722429_newBeg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904271743390_tryWithTables.cs" />
+    <Compile Include="Migrations\201904271743390_tryWithTables.Designer.cs">
+      <DependentUpon>201904271743390_tryWithTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Contract.cs" />
+    <Compile Include="Models\GraterContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Salon.cs" />
@@ -335,6 +348,10 @@
     <Compile Include="ViewModel\SkillsTherapistViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Grater-20190304024829.mdf" />
+    <Content Include="App_Data\aspnet-Grater-20190304024829_log.ldf">
+      <DependentUpon>aspnet-Grater-20190304024829.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\Images\beauty.jpg" />
     <Content Include="App_Data\Images\beauty.png" />
     <Content Include="App_Data\Images\RATE.png" />
@@ -514,6 +531,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904182124425_tidyUpCode.resx">
       <DependentUpon>201904182124425_tidyUpCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904271654443_changeCotext.resx">
+      <DependentUpon>201904271654443_changeCotext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904271722429_newBeg.resx">
+      <DependentUpon>201904271722429_newBeg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904271743390_tryWithTables.resx">
+      <DependentUpon>201904271743390_tryWithTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

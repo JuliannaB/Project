@@ -29,6 +29,7 @@ namespace Grater.Models
         public ApplicationDbContext()
             : base("AzureContext", throwIfV1Schema: false)
         {
+            
         }
 
         public static ApplicationDbContext Create()

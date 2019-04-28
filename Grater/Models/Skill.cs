@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -9,7 +10,10 @@ namespace Grater.Models
     {
         public int Id { get; set; }
         public string SkillName { get; set; }
-        public Therapist Therapist { get; set; }  //FK to Therapist
-        public int TherapistId { get; set; }     //FK to Therapist
+        public string Skillcha { get; set; }
+
+        [Required]
+        public Therapist Therapist { get; set; }
+        public int TherapistId { get; set; }
     }
 }

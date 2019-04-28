@@ -21,9 +21,7 @@ namespace Grater.Models
         public bool Mobile { get; set; }
 
         public byte[] TherapistImage { get; set; }
-
-        public Skill skill;
+        public virtual Skill Skill { get; set; }
         public int SkillId { get; set; }
-        public virtual ICollection<Skill> Skills { get; set; }
     }
 }
