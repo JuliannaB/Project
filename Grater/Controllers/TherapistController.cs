@@ -3,43 +3,45 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 
 namespace Grater.Controllers
 {
-   // [Authorize]
+    // [Authorize]
     public class TherapistController : Controller
     {
         private ApplicationDbContext _context = new ApplicationDbContext();
 
-     /*   public TherapistController()
-        {
-            _context = new ApplicationDbContext();
-        }
+        /*   public TherapistController()
+           {
+               _context = new ApplicationDbContext();
+           }
 
-        /*      public ViewResult Radom()                       //Radom jest proba polaczeia skills i therapist. tmp. 
-              {
-                  var therapist = new Therapist() { TherapistName = "Jake" };
-                  var skills = new List<Skill>
-                  {
+           /*      public ViewResult Radom()                       //Radom jest proba polaczeia skills i therapist. tmp. 
+                 {
+                     var therapist = new Therapist() { TherapistName = "Jake" };
+                     var skills = new List<Skill>
+                     {
 
 
-                      new Skill { SkillName = "Nails" },
-                      new Skill { SkillName = "MakeUp" },
-                      new Skill { SkillName = "Face" }
-                  };
-                  var ViewModel = new SkillsTherapistViewModel
-                  {
-                      Therapist = therapist,
-                      Skills = skills
-                  };
-                  return View(ViewModel);
-              }
-              */
+                         new Skill { SkillName = "Nails" },
+                         new Skill { SkillName = "MakeUp" },
+                         new Skill { SkillName = "Face" }
+                     };
+                     var ViewModel = new SkillsTherapistViewModel
+                     {
+                         Therapist = therapist,
+                         Skills = skills
+                     };
+                     return View(ViewModel);
+                 }
+                 */
         //GET: Therapist/Index    Jest ok, przywrocic po usunieciu Radom
         /*     public ViewResult Index(string sortOrder, string searchString)  // wylistowuje terapeutki, dodaje mozliwosc szukania
                    {
@@ -66,10 +68,55 @@ namespace Grater.Controllers
         public ViewResult Index()
         {
 
-            var therapists = _context.Therapists.ToList();                            
+            var therapists = _context.Therapists.ToList();
 
             return View(therapists);
         }
+
+
+
+
+        // GET: /Create
+        [HttpGet]
+        public ActionResult Create([Bind(Include = "TherapistName,City, Description, PhoneNumber, Email, Mobile,")]   Therapist therapist, Skill skill)            // umozliwie nam wejscie do veiw create
+        {
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _context.Therapists.Add(therapist);
+                    _context.Skills.Add(skill);
+                    _context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (DataException /* dex */)
+            {
+                //Log the error (uncomment dex variable name and add a line here to write a log.
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+            }
+            return View(therapist);
+        }
+        [HttpPost]
+
+        public ActionResult Create(Therapist therapistModel)
+        {
+            string fileName = Path.GetFileNameWithoutExtension(therapistModel.ImageFile.FileName);
+            string extansion = Path.GetExtension(therapistModel.ImageFile.FileName);
+            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extansion;
+            therapistModel.TherapistImagePath = "~/Image/" + fileName;
+            fileName = Path.Combine(Server.MapPath("~/Image/"), fileName);
+            therapistModel.ImageFile.SaveAs(fileName);
+
+            _context.Therapists.Add(therapistModel);
+            _context.SaveChanges();
+
+            ModelState.Clear();
+            return View();
+        }
+
+
 
         //GET: Therapist/Details
 
@@ -87,11 +134,15 @@ namespace Grater.Controllers
             return View(therapist);
         }
 
-        // GET: /Create
-        public ActionResult Create()            // umozliwie nam wejscie do veiw create
-        {
-            return View();
-        }
+        /* [HttpGet]
+         public ActionResult Details (int id)
+           {
+               Therapist therapistModel = new Therapist();
+               therapistModel = _context.Therapists.Where(b => b.Id == id).FirstOrDefault();
+               return View();
+           } */
+
+        //therapists = therapists.Where(b => b.TherapistName.Contains(searchString) || b.City.Contains(searchString) || b.PhoneNumber.Contains(searchString));
 
         // GET: Therapist/Edit/5    to zdaje sie zrobione przezemnie... tylko ze cos nie dziala. Nie wywala sie ale nie zapamietuje zmian
 

@@ -14,22 +14,22 @@
 </p>
 @using (Html.BeginForm())
 {
-<table class="table-condensed">
-    <tr>
-        <th>Search by name:</th>
-        <th>Search by city:</th>
-        <th>Search by phone number:</th>
-    </tr>
-    <tr>
-        <td> @Html.TextBox("SearchString")</td>
-        <td> @Html.TextBox("SearchString")</td>
-        <td> @Html.TextBox("SearchString")</td>
-    </tr>
-    <tr>
-        <td> <input type="submit" value="Search" />   @*value - label*@</td>
+    <table class="table-condensed">
+        <tr>
+            <th>Search by name:</th>
+            <th>Search by city:</th>
+            <th>Search by phone number:</th>
+        </tr>
+        <tr>
+            <td> @Html.TextBox("SearchString")</td>
+            <td> @Html.TextBox("SearchString")</td>
+            <td> @Html.TextBox("SearchString")</td>
+        </tr>
+        <tr>
+            <td> <input type="submit" value="Search" />   @*value - label*@</td>
 
-    </tr>
-</table>
+        </tr>
+    </table>
 
 }
 <table class="table">
@@ -68,11 +68,9 @@
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
             <td>
-                @item.Skill.SkillBody
+                @*       @item.Skill.SkillBody *@
             </td>
-
-
-
+            
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |

@@ -1,28 +1,111 @@
 ﻿@model Grater.Models.Therapist
+
 @{
     ViewBag.Title = "Details";
 }
-<div class="container">
-    <table class="table-condensed">
-        <tr>
-            <th>@Model.TherapistName</th>
-        </tr>
 
-        <tr><td>@Model.TherapistImage</td></tr>
+<h2>Details</h2>
 
-        <tr><td>@Model.City</td></tr>
+<div>
+    <h4>Therapist</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*      @Html.DisplayNameFor(model => model.Skill.SkillId)
+                </dt>
 
-        <tr><td>@Model.Email</td></tr>
+                <dd>
+                    @Html.DisplayFor(model => model.Skill.SkillId)   *@
+        <dt>
+            <img src="@Url.Content(Model.TherapistImagePath)" width="250" height="250" />
+        </dt>
+        
 
-        <tr><td>@Model.Skills</td></tr>
+        <dt>
+            @Html.DisplayNameFor(model => model.TherapistName)
+        </dt>
 
-        <tr><td>@Model.Description</td></tr>
-        <tr>    <td></td></tr>
-    </table>
+        <dd>
+            @Html.DisplayFor(model => model.TherapistName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SkillId)
+        </dt>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skill.SkillBody)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skill.SkillEyes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skill.SkillFace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skill.SkillMassage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Skill.SkillNails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Skill.SkillWax)
+        </dd>
 
 
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+
+        <dd>
+            @*    @Html.DisplayFor(model => model.TherapistImagePath)*@
+        </dd>
+
+    </dl>
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
